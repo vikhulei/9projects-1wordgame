@@ -1,0 +1,107 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing:border-box;
+    font-family: arial
+}
+
+main {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+}
+
+.inputSection {
+    background-color: rgb(100, 100, 255);
+    height: 100vh;
+    flex: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.inputContainer {
+    background-color: rgb(2, 9, 114);
+    width: 70%;
+    height: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.newWord, .input, .countCorrect {
+    height: 80px;
+    width: 100%;
+    background-color: black;
+    color: white;
+    font-size: 1.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.timer {
+    border: red 3px solid;
+    margin: auto;
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+}
+
+input {
+    height: 40%;
+}
+
+button {
+    width: 100px;
+    height: 40%;
+    background-color: rgb(2, 9, 114);
+    color: white;
+    font-size: 1rem;
+    border: none;
+}
+
+button:hover {
+    cursor: pointer;
+}
+
+button:active {
+    transform: translate(3px, 3px);
+}
+
+.resultsSection {
+    height: 100vh;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.countCorrect {
+    height: 80px;
+}
+
+.wordsContainer {
+    display: flex;
+    justify-content: space-between;
+    background-color: rgb(2, 9, 114);
+    height: 100%;
+    width: 100%;
+    padding-top: 30px;
+}
+
+.correctWords, .wrongWords {
+    width: 45%;
+    display: flex;
+    flex-direction: column;
+}
+
+.corWord, .wrWord {
+    width: 100%;
+    height: 50px;
+    background-color: rgb(13, 143, 104);
+    color: rgb(211, 189, 160);
+    display: flex;
+    align-items: center;
+    padding: 0 0 5px 10px;
+    margin: 5px 0 5px 0;
+}
