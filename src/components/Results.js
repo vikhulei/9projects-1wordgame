@@ -1,19 +1,19 @@
 import React from "react"
 
-const Results = () => {
+const Results = ({counter, correctResults, wrongResults}) => {
     return <div className="resultsContainer">
         <div className="countCorrect">
-            Correct answers: 10
+            Correct answers: {counter}
         </div>
         <div className="wordsContainer">
             <div className="correctWords">
                 <div className="correctWord">
-                    hello
+                    {correctResults}
                 </div>
             </div>
             <div className="wrongWords">
                 <div className="wrongWord">
-                    fdfdf
+                    {wrongResults[0]}
                 </div>
             </div>
         </div>
