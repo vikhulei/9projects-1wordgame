@@ -7,14 +7,20 @@ const Results = ({counter, correctResults, wrongResults}) => {
         </div>
         <div className="wordsContainer">
             <div className="correctWords">
-                <div className="correctWord">
-                    {correctResults}
+                {correctResults.map((correctWord, index) => (
+                    <div key={index} className="correctWord">
+                    {correctWord}
                 </div>
+                ) )}
+                
             </div>
             <div className="wrongWords">
-                <div className="wrongWord">
-                    {wrongResults[0]}
-                </div>
+                {wrongResults.map((wrongWord, index) => (
+                    <div key={index} className="wrongWord">
+                        {wrongWord}
+                    </div>
+                    ))
+                }
             </div>
         </div>
     </div>

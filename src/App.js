@@ -34,6 +34,9 @@ function App() {
       setInputValue("")
       setInputDisabled(true)
       setStart("Start")
+      setCounter(0)
+      setCorrectResults([])
+      setWrongResults([])
       setDisabled("disabled")
     }
     
@@ -59,9 +62,6 @@ function App() {
         inputEl.current.focus()
         } else if (disabled==="disabled") {
           setTime(30)
-          setCounter(0)
-          setCorrectResults([])
-          setWrongResults([])
         } else if (time === 0) {
           setDisabled("disabled")
           setInputDisabled(true)
