@@ -49,7 +49,7 @@ function App() {
         setCounter(prevCounter => prevCounter+1)
         setInputValue("")
       } else {
-        setWrongResults([inputValue])
+        setWrongResults(prevResults => [...prevResults, inputValue])
         setInputValue("")
       }
       setNewWord(word[n])
