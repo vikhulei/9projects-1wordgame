@@ -3,6 +3,7 @@ import React from "react"
 const Input = (props) => {
     const {time, handleStart, newWord, handleInput, inputDisabled, inputEl,
     start, inputValue, setInputValue} = props;
+    
     return <div className="inputSection">
         <div className="inputContainer">
         <div className="newWord">

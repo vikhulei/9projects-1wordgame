@@ -8,18 +8,14 @@ import Words from "./components/Words"
 function App() {
   const [time, setTime] = useState(30)
   const [disabled, setDisabled] = useState("disabled")
-  const [word, setWord] = useState(Words)
+  const [word] = useState(Words)
   const [newWord, setNewWord] = useState(word[0])
   const [inputDisabled, setInputDisabled] = useState(true)
   const [start, setStart] = useState("Start")
-  const [inputValue, setInputValue] = useState()
+  const [inputValue, setInputValue] = useState("")
   const [counter, setCounter] = useState(0)
-
   const [correctResults, setCorrectResults] = useState([])
   const [wrongResults, setWrongResults] = useState([])
-
-
-
   const inputEl = useRef()
 
   let n = Math.floor(Math.random()*word.length)
@@ -38,8 +34,7 @@ function App() {
       setCorrectResults([])
       setWrongResults([])
       setDisabled("disabled")
-    }
-    
+    }   
 }
 
   const handleInput = e => {

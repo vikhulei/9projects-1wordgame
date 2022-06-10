@@ -74,14 +74,17 @@ button:active {
   transform: translate(3px, 3px);
 }
 
-
-
 .resultsContainer {
   height: 100vh;
   flex: 1;
   display: flex;
   flex-direction: column;
+  background-color: rgb(2, 9, 114);
   overflow: scroll;
+}
+
+.resultsContainer::-webkit-scrollbar {
+  display: none;
 }
 
 .countCorrect {
@@ -91,11 +94,14 @@ button:active {
 .wordsContainer {
   display: flex;
   justify-content: space-between;
-  background-color: rgb(2, 9, 114);
   height: 100%;
   width: 100%;
   padding-top: 30px;
   overflow: scroll;
+}
+
+.wordsContainer::-webkit-scrollbar {
+  display: none;
 }
 
 .correctWords, .wrongWords {
