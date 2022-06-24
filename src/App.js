@@ -7,10 +7,9 @@ import Words from "./components/Words"
 
 function App() {
   const [time, setTime] = useState(30)
-  const [disabled, setDisabled] = useState("disabled")
+  const [disabled, setDisabled] = useState(true)
   const [word] = useState(Words)
   const [newWord, setNewWord] = useState(word[0])
-  const [inputDisabled, setInputDisabled] = useState(true)
   const [start, setStart] = useState("Start")
   const [inputValue, setInputValue] = useState("")
   const [counter, setCounter] = useState(0)
@@ -22,19 +21,18 @@ function App() {
 
   const handleStart = () => {
     if (start==="Start") {
-      setDisabled("enabled")
-      setInputDisabled(false)
+      setDisabled(false)
       setStart("Restart")
       inputEl.current.focus()
     } else if (start==="Restart") {
       setInputValue("")
-      setInputDisabled(true)
       setStart("Start")
       setCounter(0)
+      setTime(30)
       setCorrectResults([])
       setWrongResults([])
-      setDisabled("disabled")
-    }   
+      setDisabled(true)
+    }
 }
 
   const handleInput = e => {
@@ -52,14 +50,13 @@ function App() {
   }
 
   useEffect(() => {
-    if(disabled !== "disabled" && time > 0) {
-        setTimeout(() => {setTime(prevtime => prevtime - 1)}, 1000)
+    if(!disabled && time > 0) {
+        setTimeout(() => {setTime(time - 1)}, 1000)
         inputEl.current.focus()
-        } else if (disabled==="disabled") {
+        } else if (disabled && time !== 0) {
           setTime(30)
         } else if (time === 0) {
-          setDisabled("disabled")
-          setInputDisabled(true)
+          setDisabled(true)
     }
   }, [disabled, time])
 
@@ -70,7 +67,7 @@ function App() {
       time={time}
       handleStart={handleStart}
       handleInput={handleInput}
-      inputDisabled={inputDisabled}
+      disabled={disabled}
       inputEl={inputEl}
       start={start}
       setInputValue={setInputValue}

@@ -1,7 +1,7 @@
 import React from "react"
 
 const Input = (props) => {
-    const {time, handleStart, newWord, handleInput, inputDisabled, inputEl,
+    const {time, handleStart, newWord, handleInput, disabled, inputEl,
     start, inputValue, setInputValue} = props;
     
     return <div className="inputSection">
@@ -13,10 +13,13 @@ const Input = (props) => {
             {time}
         </div>
         <div className="input">
-            <input ref={inputEl} type="text" onKeyPress={handleInput}
-            disabled={inputDisabled}
+            <input ref={inputEl} type="text"
+            onKeyPress={handleInput} 
+            disabled={disabled}
             value={inputValue}
-            onChange={e => setInputValue(e.target.value)}
+            onChange={e => {
+                setInputValue(e.target.value)
+            }}
     
             ></input>
             <button onClick={handleStart}>{start}</button>
